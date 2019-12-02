@@ -1,0 +1,19 @@
+搭建过程记录：
+
+1. 创建入口文件/public/index.php，定义基本常量，引入 composer 自动加载文件。
+
+2. 创建启动文件/system/library/App.php，获取并解析路由
+(url:domain.com/index.php/index/index 访问 /appliction/controller/Index.php index()方法)
+
+3. 创建父级控制器/system/library/Controller.php，创建 视图view 渲染方法(fetch)
+
+通过 1,2,3 步骤其实已经搭建出框架的基本结构，以下操作仅为添枝加叶：
+
+a. 创建数据库类/system/library/Db.php，（仅继承mysqli类，其它功能待实现）
+
+a. 将解析路由代码封装成类/system/library/Router.php，于 App::run() 方法调用
+
+a. 封装配置类/system/library/Config.php，实现加载配置规则
+
+a. 引入公共方法库
+
